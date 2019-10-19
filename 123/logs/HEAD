@@ -1,3 +1,0 @@
-0000000000000000000000000000000000000000 99ccbbbada4b37c457b5b084fb75cda87c39d2cd Andrew Mead <andrew@mead.io> 1502461786 -0400	commit (initial): Initial commit
-99ccbbbada4b37c457b5b084fb75cda87c39d2cd c479590ed23f77b081cf9e71bc5c73c5dc4f0a18 Andrew Mead <andrew@mead.io> 1502462064 -0400	commit: Remove dummy expense data
-c479590ed23f77b081cf9e71bc5c73c5dc4f0a18 b00bac29904db7039c2760799b05676d2613be5f Andrew Mead <andrew@mead.io> 1502715642 -0400	commit: Setup production webpack build
