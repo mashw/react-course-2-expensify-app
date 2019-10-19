@@ -8,11 +8,11 @@ let addExpense, history, wrapper;
 beforeEach(() => {
   addExpense = jest.fn();
   history = { push: jest.fn() };
-  wrapper = shallow(<AddExpensePage addExpense={addExpense} history={history}/>);
+  wrapper = shallow(<AddExpensePage addExpense={addExpense} history={history} />);
 });
 
 test('should render AddExpensePage correctly', () => {
-  expect(wrapper.state).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 test('should handle onSubmit', () => {

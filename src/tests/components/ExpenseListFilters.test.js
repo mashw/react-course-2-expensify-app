@@ -1,6 +1,6 @@
 import React from 'react';
-import moment from 'moment';
 import { shallow } from 'enzyme';
+import moment from 'moment';
 import { ExpenseListFilters } from '../../components/ExpenseListFilters';
 import { filters, altFilters } from '../fixtures/filters';
 
@@ -24,28 +24,24 @@ beforeEach(() => {
   );
 });
 
-
 test('should render ExpenseListFilters correctly', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-
-test('should render ExpensesListFilters with alt data correctly', () => {
+test('should render ExpenseListFilters with alt data correctly', () => {
   wrapper.setProps({
     filters: altFilters
-  })
+  });
   expect(wrapper).toMatchSnapshot();
 });
 
-
 test('should handle text change', () => {
-  const value = 'rent'
+  const value = 'rent';
   wrapper.find('input').simulate('change', {
     target: { value }
   });
   expect(setTextFilter).toHaveBeenLastCalledWith(value);
 });
-
 
 test('should sort by date', () => {
   const value = 'date';
@@ -58,18 +54,13 @@ test('should sort by date', () => {
   expect(sortByDate).toHaveBeenCalled();
 });
 
-
 test('should sort by amount', () => {
   const value = 'amount';
-  wrapper.setProps({
-    filters: altFilters
-  });
   wrapper.find('select').simulate('change', {
     target: { value }
   });
   expect(sortByAmount).toHaveBeenCalled();
 });
-
 
 test('should handle date changes', () => {
   const startDate = moment(0).add(4, 'years');
@@ -79,11 +70,8 @@ test('should handle date changes', () => {
   expect(setEndDate).toHaveBeenLastCalledWith(endDate);
 });
 
-
-test('should handle date focus changes', () => {
+test('hould handle date focus changes', () => {
   const calendarFocused = 'endDate';
   wrapper.find('DateRangePicker').prop('onFocusChange')(calendarFocused);
   expect(wrapper.state('calendarFocused')).toBe(calendarFocused);
 });
-
-
